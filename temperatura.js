@@ -16,3 +16,22 @@
 // Grados Fahrenheit: 57.2. 
 // Pruébalo con los valores numéricos que se te ocurran.
 
+// Nota: convertir a number el valor solicitado por prompt o por un input y verificar que sea un número para evitar errores en tu programa.
+
+const prompt = require('prompt-sync')();
+
+while (true) {
+    const tempCelsius = prompt("Ingresa la temperatura en grados celsius a convertir: ");
+    if (tempCelsius == null || isNaN(tempCelsius) || !tempCelsius.trim()) { //verificar si es número y evitar errores
+        console.log("⚠️  Error. Escribe un número válido");
+        continue;
+    }
+    const celsius = Number(tempCelsius);
+    const kelvin = (celsius + 273.15);
+    const fahrenheit = ((1.8 * celsius) + 32);
+
+    console.log(`Grados Kelvin: ${kelvin}`);
+    console.log(`Grados Fahrenheit: ${fahrenheit}`);
+
+    break;
+}
